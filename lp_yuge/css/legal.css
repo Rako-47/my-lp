@@ -1,0 +1,5 @@
+body{background:#ddd7cd}.page{max-width:480px;margin:auto;background:var(--paper);min-height:100vh;padding:42px 22px 70px}.page h1{font:700 24px/1.5 var(--font-mincho);margin-bottom:26px}.page h2{font-size:15px;margin:24px 0 8px}.page p,.page li{font-size:11px;line-height:1.9;color:var(--ink-soft)}.page a{text-decoration:underline}
+
+body{background:#ddd7cd}.page{max-width:480px;margin:auto;background:var(--paper);min-height:100vh;padding:42px 22px 70px}.page h1{font:700 24px/1.5 var(--font-mincho);margin-bottom:26px}.page h2{font-size:15px;margin:24px 0 8px}.page p,.page li{font-size:11px;line-height:1.9;color:var(--ink-soft)}.page a{text-decoration:underline}
+
+body{background:#ddd7cd}.page{max-width:480px;margin:auto;background:var(--paper);min-height:100vh;padding:42px 22px 70px}.page h1{font:700 24px/1.5 var(--font-mincho);margin-bottom:26px}.page h2{font-size:15px;margin:24px 0 8px}.page p{font-size:11px;line-height:1.9;color:var(--ink-soft)}.page a{text-decoration:underline}

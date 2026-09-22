@@ -1,0 +1,74 @@
+#reservation-form { scroll-margin-top:16px; }
+fieldset { margin:0 0 18px; padding:0; border:0; }
+legend { margin-bottom:8px; font-size:11px; font-weight:700; }
+.required { margin-left:4px; color:#8a3e32; font-size:8.5px; }
+.optional { margin-left:4px; color:var(--ink-soft); font-size:8.5px; font-weight:400; }
+.radio-grid { display:grid; grid-template-columns:1fr; gap:7px; }
+.radio-grid label {
+  display:flex; align-items:center; gap:8px; padding:11px 11px;
+  border:1px solid var(--line); background:#fff; font-size:11.5px;
+  transition: background-color .12s ease, border-color .12s ease, box-shadow .12s ease;
+  cursor:pointer;
+}
+.radio-grid label:has(input:checked) {
+  background:var(--paper-deep);
+  border-color:var(--ink);
+  box-shadow:inset 0 0 0 1px var(--ink);
+}
+.radio-grid label:has(input:checked) span { font-weight:700; }
+.radio-grid input { accent-color:var(--ink); }
+.field { display:block; margin-bottom:15px; font-size:11px; font-weight:700; }
+.field input, .field textarea { display:block; width:100%; margin-top:7px; padding:11px 12px; border:1px solid rgba(42,42,42,.22); border-radius:0; background:#fff; color:var(--ink); font-size:12px; outline:none; }
+.field input:focus, .field textarea:focus { border-color:var(--ink); }
+.field textarea { resize:vertical; min-height:100px; line-height:1.7; }
+.field-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; }
+.field-row .field { min-width:0; }
+.field-row .field input, .field-row .field select { min-width:0; max-width:100%; width:100%; height:48px; box-sizing:border-box; }
+
+/* スマホでは日付入力と時間選択を縦1列にして、ネイティブ入力UIの幅による崩れを防止 */
+@media (max-width: 600px) {
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  /* iOS / Android の date input はネイティブUIの影響で幅がはみ出すことがあるため、
+     スマホでは date も select と同じ幅・高さの通常ボックスとして描画する。 */
+  .field-row .field input[type="date"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .field-row .field select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+  }
+}
+.agree { display:flex; align-items:flex-start; gap:8px; margin:4px 0 14px; color:var(--ink-soft); font-size:9.5px; line-height:1.65; }
+.agree input { flex:0 0 auto; margin-top:3px; accent-color:var(--ink); }
+.agree a { text-decoration:underline; }
+.form-submit { width:100%; padding:14px 12px; background:var(--ink); color:#fff; font-size:12px; font-weight:500; }
+.form-message { margin:0 0 12px; padding:11px 12px; font-size:10px; line-height:1.7; }
+.form-message.error { background:#f3e2dd; color:#73352d; }
+.form-success { padding:25px 18px; border:1px solid var(--line); background:var(--paper-deep); text-align:center; }
+.success-kicker { margin-bottom:7px; color:var(--moss); font-size:8.5px; letter-spacing:.16em; }
+.form-success h3 { margin-bottom:10px; font-size:20px; }
+.form-success p:last-child { margin:0; color:var(--ink-soft); font-size:10.5px; line-height:1.9; }
+
+.field select { display:block; width:100%; margin-top:7px; padding:11px 12px; border:1px solid rgba(42,42,42,.22); border-radius:0; background:#fff; color:var(--ink); font-size:12px; outline:none; }
+.field select:focus { border-color:var(--ink); }
+.field-error { display:block; margin-top:5px; color:#8a3e32; font-size:10px; font-weight:400; line-height:1.5; }
+.radio-grid + .field-error { margin-top:6px; }
+.agreement-error { margin:0 0 12px 26px; }
+.field input[aria-invalid="true"], .field select[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color:#8a3e32; }
+.radio-grid:has(input[aria-invalid="true"]) label { border-color:#8a3e32; }

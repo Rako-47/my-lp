@@ -1,0 +1,440 @@
+/* Desktop layout
+   The mobile layout remains unchanged. These rules apply only to PC-sized screens. */
+@media (min-width: 901px) {
+  :root {
+    --desktop-gutter: clamp(48px, 6vw, 88px);
+    --desktop-content: 1180px;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+
+  .site-shell {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    box-shadow: none;
+  }
+
+  /* FV: preserve the mobile visual language while using the wide screen. */
+  .hero {
+    height: clamp(620px, 52vw, 760px);
+    min-height: 620px;
+  }
+
+  .hero-copy {
+    left: var(--desktop-gutter);
+    right: var(--desktop-gutter);
+    bottom: 72px;
+    max-width: 760px;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  .hero-copy h1 {
+    margin-bottom: 18px;
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 1.48;
+  }
+
+  .hero-copy > p:last-child {
+    max-width: 560px;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .hero-badge {
+    top: 32px;
+    right: var(--desktop-gutter);
+    min-width: 112px;
+    padding: 10px 13px 11px;
+  }
+
+  .hero-badge span { font-size: 9px; }
+  .hero-badge strong { font-size: 16px; }
+
+  .hero-cta-strip {
+    display: grid;
+    grid-template-columns: minmax(260px, .8fr) minmax(360px, 1.2fr) auto;
+    align-items: center;
+    gap: 28px;
+    padding: 22px var(--desktop-gutter) 24px;
+  }
+
+  .hero-cta-price {
+    margin-bottom: 0;
+    align-items: center;
+  }
+
+  .hero-cta-label { font-size: 12px; }
+  .hero-cta-nums { font-size: 28px; }
+  .hero-cta-period { margin: 0; font-size: 10px; white-space: nowrap; }
+
+  .hero-cta-strip .cta-block {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 80px var(--desktop-gutter);
+  }
+
+  .section-head {
+    margin-bottom: 38px;
+  }
+
+  .kicker {
+    margin-bottom: 9px;
+    font-size: 11px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(28px, 2.5vw, 36px);
+    line-height: 1.5;
+  }
+
+  /* Concept: centered reading column, with generous desktop whitespace. */
+  .concept-section {
+    padding-top: 92px;
+    padding-bottom: 96px;
+  }
+
+  .concept-section h2 {
+    margin-bottom: 26px;
+    font-size: clamp(32px, 3vw, 42px);
+  }
+
+  .concept-section > p:last-child {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 2.15;
+  }
+
+  /* Temperature: same three-card visual, enlarged for the wide canvas. */
+  .temperature-section {
+    padding-top: 82px;
+    padding-bottom: 88px;
+  }
+
+  .spec-grid {
+    max-width: var(--desktop-content);
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .spec-mini img {
+    height: clamp(220px, 19vw, 280px);
+    margin-bottom: 16px;
+  }
+
+  .spec-temp {
+    margin-bottom: 9px;
+    font-size: 25px;
+  }
+
+  .spec-mini h3 {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .spec-mini p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  /* For Her: image and copy share the horizontal space. */
+  .women-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+    grid-template-areas:
+      "head head"
+      "image text";
+    column-gap: clamp(42px, 6vw, 88px);
+    align-items: center;
+    padding: 76px var(--desktop-gutter) 80px;
+  }
+
+  .women-section .section-head {
+    grid-area: head;
+    margin-bottom: 34px;
+  }
+
+  .women-section > img {
+    grid-area: image;
+    width: 100%;
+    height: clamp(340px, 31vw, 480px);
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+
+  .women-section > p {
+    grid-area: text;
+    max-width: 430px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 2.15;
+  }
+
+  .women-section .section-head h2 {
+    font-size: clamp(28px, 2.5vw, 36px);
+  }
+
+  /* Plans: three cards in one row, while retaining the existing card styling. */
+  .section-plans {
+    padding-top: 82px;
+    padding-bottom: 88px;
+  }
+
+  .section-plans > .section-head,
+  .section-plans > .coupon {
+    max-width: var(--desktop-content);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .section-plans {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 22px;
+    align-items: stretch;
+  }
+
+  .section-plans > .section-head {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .price-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin: 0;
+    padding: 24px 23px 25px;
+  }
+
+  .price-card.is-popular {
+    padding-top: 31px;
+  }
+
+  .price-thumb {
+    width: 100%;
+    height: 170px;
+    margin-bottom: 17px;
+    object-fit: cover;
+  }
+
+  .price-tag { margin-bottom: 12px; font-size: 10.5px; }
+  .price-reason { font-size: 13px; }
+  .price-duration { font-size: 13px; }
+  .price-desc { font-size: 12.5px; line-height: 1.8; }
+  .price-row { margin-top: auto; }
+  .price-new { font-size: 28px; }
+  .price-btn { padding: 14px 10px; }
+  .price-note { font-size: 10px; }
+  .price-proof p { font-size: 11.5px; }
+  .price-proof span { font-size: 9.5px; }
+
+  .coupon {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 28px;
+    padding: 20px;
+  }
+
+  /* Reservation: keep the form comfortably readable instead of stretching it full width. */
+  .reservation-section {
+    padding-top: 82px;
+    padding-bottom: 88px;
+  }
+
+  .reservation-section > .section-head,
+  .reservation-section > .reserve-notice,
+  .reservation-section > form,
+  .reservation-section > .form-success {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .reserve-notice {
+    margin-bottom: 30px;
+    padding: 17px 20px;
+  }
+
+  .reserve-notice p { font-size: 12px; }
+
+  .radio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .radio-grid label {
+    min-height: 54px;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .reservation-section form {
+    font-size: 12px;
+  }
+
+  .reservation-section .field-row {
+    gap: 16px;
+  }
+
+  .reservation-section .field-row .field input,
+  .reservation-section .field-row .field select {
+    height: 50px;
+  }
+
+  .reservation-section .field input,
+  .reservation-section .field select,
+  .reservation-section .field textarea {
+    font-size: 13px;
+  }
+
+  .form-submit {
+    min-height: 54px;
+  }
+
+  /* FAQ: a restrained reading width keeps the desktop page airy. */
+  .faq-section {
+    padding-top: 78px;
+    padding-bottom: 82px;
+  }
+
+  .faq-section .section-head,
+  .faq-section .faq-list {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  summary {
+    padding: 18px 32px 18px 0;
+    font-size: 13px;
+  }
+
+  summary::after {
+    top: 15px;
+  }
+
+  details p {
+    margin-bottom: 18px;
+    padding-right: 25px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  /* Amenity: image and list side by side. */
+  .amenity-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
+    grid-template-areas:
+      "head head"
+      "image list";
+    column-gap: clamp(42px, 6vw, 88px);
+    align-items: center;
+  }
+
+  .amenity-section .section-head {
+    grid-area: head;
+  }
+
+  .amenity-section > img {
+    grid-area: image;
+    height: clamp(320px, 30vw, 440px);
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+
+  .amenity-list {
+    grid-area: list;
+    align-self: stretch;
+  }
+
+  .amenity-list li {
+    padding: 17px 0;
+    font-size: 13px;
+  }
+
+  .amenity-list small {
+    font-size: 11px;
+  }
+
+  .access-section {
+    padding-top: 64px;
+    padding-bottom: 78px;
+  }
+
+  .access-section .section-head,
+  .access-section .access-list {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .access-list div {
+    grid-template-columns: 90px 1fr;
+    gap: 24px;
+    padding: 15px 0;
+  }
+
+  .access-list dt { font-size: 10px; }
+  .access-list dd { font-size: 12px; }
+
+  .final-cta {
+    padding: 78px var(--desktop-gutter) 54px;
+  }
+
+  .final-cta h2 {
+    margin-bottom: 18px;
+    font-size: clamp(28px, 2.7vw, 38px);
+  }
+
+  .price-recap { font-size: 22px; }
+  .period { margin-bottom: 25px; font-size: 10px; }
+
+  .final-primary,
+  .final-secondary {
+    max-width: 560px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px 12px;
+    font-size: 12px;
+  }
+
+  .final-secondary { margin-top: 9px; }
+
+  .fine-print {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 24px;
+  }
+
+  .fine-print p { font-size: 9px; }
+
+  footer {
+    padding: 40px var(--desktop-gutter) 48px;
+  }
+
+  .footer-name { font-size: 18px; }
+  footer > p:not(.footer-name):not(.footer-legal) { font-size: 10px; }
+  .footer-legal { font-size: 9px; }
+
+  /* The mobile sticky bar is unnecessary on desktop; the page retains visible CTAs. */
+  .sticky-cta {
+    display: none;
+  }
+}

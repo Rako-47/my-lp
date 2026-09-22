@@ -1,0 +1,15 @@
+:root {
+  --paper: #F7F3EC;
+  --paper-deep: #F0E9DD;
+  --wood: #D9C7B3;
+  --wood-deep: #C6AF93;
+  --ink: #2A2A2A;
+  --ink-soft: #55524C;
+  --moss: #5C6B4F;
+  --line: rgba(42,42,42,0.14);
+  --font-mincho: 'Shippori Mincho', 'Noto Serif CJK JP', serif;
+  --font-sans: 'Zen Kaku Gothic New', 'Noto Sans CJK JP', sans-serif;
+  --content-max-width: 480px;
+  --gutter: clamp(18px, 5vw, 24px);
+  --shadow: 0 10px 28px rgba(42,42,42,.07);
+}
